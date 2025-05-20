@@ -8,17 +8,28 @@ from file_extractor import extract_text_from_file
 from report_generator import generate_lab_report_summary
 from pdf_generator import generate_pdf_report
 
-models_dir = Path('models')
+BASE_DIR = Path(__file__).resolve().parent
+MODELS_DIR = BASE_DIR / 'models'
 
 # Load diabetes model components
-diabetes_model = pickle.load(open(models_dir / 'diabetes_model.pkl', 'rb'))
-diabetes_scaler = pickle.load(open(models_dir / 'diabetes_scaler.pkl', 'rb'))
-diabetes_pca = pickle.load(open(models_dir / 'diabetes_pca.pkl', 'rb'))
+with open(MODELS_DIR / 'diabetes_model.pkl', 'rb') as f:
+    diabetes_model = pickle.load(f)
+
+with open(MODELS_DIR / 'diabetes_scaler.pkl', 'rb') as f:
+    diabetes_scaler = pickle.load(f)
+
+with open(MODELS_DIR / 'diabetes_pca.pkl', 'rb') as f:
+    diabetes_pca = pickle.load(f)
 
 # Load hypertension model components
-hypertension_model = pickle.load(open(models_dir / 'hypertension_model.pkl', 'rb'))
-hypertension_scaler = pickle.load(open(models_dir / 'hypertension_scaler.pkl', 'rb'))
-hypertension_pca = pickle.load(open(models_dir / 'hypertension_pca.pkl', 'rb'))
+with open(MODELS_DIR / 'hypertension_model.pkl', 'rb') as f:
+    hypertension_model = pickle.load(f)
+
+with open(MODELS_DIR / 'hypertension_scaler.pkl', 'rb') as f:
+    hypertension_scaler = pickle.load(f)
+
+with open(MODELS_DIR / 'hypertension_pca.pkl', 'rb') as f:
+    hypertension_pca = pickle.load(f)
 
 st.title("Admin Dashboard")
 
