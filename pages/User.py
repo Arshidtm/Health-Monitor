@@ -15,9 +15,9 @@ def load_pickle(file_name):
         return pickle.load(f)
 
 # Load diabetes model components
-diabetes_model = load_pickle('diabetes_model.pkl')
-diabetes_scaler = load_pickle('diabetes_scaler.pkl')
-diabetes_pca = load_pickle('diabetes_pca.pkl')
+diabetes_model = load_pickle('Diabetes_model.pkl')
+diabetes_scaler = load_pickle('Diabetes_scaler.pkl')
+diabetes_pca = load_pickle('Diabetes_pca.pkl')
 
 # Load hypertension model components
 hypertension_model = load_pickle('hypertension_model.pkl')
