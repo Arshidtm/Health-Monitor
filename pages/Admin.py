@@ -1,20 +1,24 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from pathlib import Path
 from streamlit_autorefresh import st_autorefresh
 from data_simulator import generate_dynamic_data, get_combined_user_data, smoking_map
 from file_extractor import extract_text_from_file
 from report_generator import generate_lab_report_summary
 from pdf_generator import generate_pdf_report
 
-# Load models, scalers, PCA
-diabetes_model = pickle.load(open('models/diabetes_model.pkl', 'rb'))
-diabetes_scaler = pickle.load(open('models/diabetes_scaler.pkl', 'rb'))
-diabetes_pca = pickle.load(open('models/diabetes_pca.pkl', 'rb'))
+models_dir = Path('models')
 
-hypertension_model = pickle.load(open('models/hypertension_model.pkl', 'rb'))
-hypertension_scaler = pickle.load(open('models/hypertension_scaler.pkl', 'rb'))
-hypertension_pca = pickle.load(open('models/hypertension_pca.pkl', 'rb'))
+# Load diabetes model components
+diabetes_model = pickle.load(open(models_dir / 'diabetes_model.pkl', 'rb'))
+diabetes_scaler = pickle.load(open(models_dir / 'diabetes_scaler.pkl', 'rb'))
+diabetes_pca = pickle.load(open(models_dir / 'diabetes_pca.pkl', 'rb'))
+
+# Load hypertension model components
+hypertension_model = pickle.load(open(models_dir / 'hypertension_model.pkl', 'rb'))
+hypertension_scaler = pickle.load(open(models_dir / 'hypertension_scaler.pkl', 'rb'))
+hypertension_pca = pickle.load(open(models_dir / 'hypertension_pca.pkl', 'rb'))
 
 st.title("Admin Dashboard")
 
