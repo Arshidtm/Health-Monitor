@@ -7,7 +7,7 @@
 
 
 
-A production-ready face recognition system with web interface built with FastAPI, MTCNN, and FaceNet.
+A production-ready Health Monitoring  system with web interface built with Streamlit, Groq API, and XGBoost.
 
 ## 📦 Installation
 
